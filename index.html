@@ -710,8 +710,24 @@
             window.scrollTo({ top: topPos, behavior: 'smooth' });
           }
         }
-      });
-    });
+    // 6. Scroll Entrance Animation for Teachers Section
+    const teacherCards = document.querySelectorAll('.teacher-card');
+    if ('IntersectionObserver' in window) {
+      const teacherObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('animate-in');
+            }, index * 90);
+            teacherObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      teacherCards.forEach(card => teacherObserver.observe(card));
+    } else {
+      teacherCards.forEach(card => card.classList.add('animate-in'));
+    }
   </script>
 </body>
 </html>
