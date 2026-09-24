@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Quran Online — Sabeely Academy</title>
+    <meta name="description" content="Learn Quran online with certified Tajweed tutors. Master Quran reading, Tajweed rules, recitation, memorization (Hifz), and revision at Sabeely Academy." />
+    <link rel="icon" type="image/png" href="img/sabeely_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ===== LANG TOGGLE BTN ===== */
+      .lang-toggle-btn {
+        background: transparent;
+        border: 1.5px solid var(--gold);
+        color: var(--gold);
+        font-family: var(--font-ui);
+        font-size: 0.82rem;
+        font-weight: 700;
+        padding: 7px 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: background 0.25s, color 0.25s;
+        white-space: nowrap;
+      }
+      .lang-toggle-btn:hover {
+        background: var(--gold);
+        color: #fff;
+      }
+      /* RTL overrides */
+      [dir="rtl"] body,
+      [dir="rtl"] .program-hero-content,
+      [dir="rtl"] .topic-card,
+      [dir="rtl"] .faq-item,
+      [dir="rtl"] .progression-step,
+      [dir="rtl"] p, [dir="rtl"] h1,
+      [dir="rtl"] h2, [dir="rtl"] h3 {
+        font-family: 'Cairo', 'Tajawal', sans-serif !important;
+      }
+      [dir="rtl"] .program-hero-grid {
+        direction: rtl;
+      }
+      [dir="rtl"] .navbar-links {
+        direction: rtl;
+      }
+      [dir="rtl"] .faq-question {
+        direction: rtl;
+        text-align: right;
+      }
+      [dir="rtl"] .progression-track {
+        direction: rtl;
+      }
+      [dir="rtl"] .program-cta {
+        direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-logo">
+          <img src="img/sabeely_logo.png" alt="Sabeely Logo" />
+        </a>
+        <ul class="navbar-links" id="navLinks">
+          <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="learn-quran.html" data-en="Learn Quran" data-ar="تعلم القرآن">Learn Quran</a></li>
+          <li><a href="learn-arabic.html" data-en="Learn Arabic" data-ar="تعلم العربية">Learn Arabic</a></li>
+          <li><a href="learn-islamic-studies.html" data-en="Islamic Studies" data-ar="الدراسات الإسلامية">Islamic Studies</a></li>
+          <li><a href="blog.html" data-en="Blog" data-ar="المدونة">Blog</a></li>
+          <li>
+            <a href="https://wa.me/201555063434" target="_blank" class="btn-nav" data-en="Start Your Journey" data-ar="ابدأ رحلتك">Start Your Journey</a>
+          </li>
+        </ul>
+        <button class="lang-toggle-btn" id="langToggle" onclick="toggleLang()">AR</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== PROGRAM HERO ===== -->
+    <section class="program-hero">
+      <div class="container">
+        <div class="program-hero-grid">
+          <div class="program-hero-content fade-in-left">
+            <div class="program-hero-badge" data-en="HOLY QURAN PROGRAM" data-ar="برنامج القرآن الكريم">
+              HOLY QURAN PROGRAM
+            </div>
+            <h1 data-en="Learn Quran Online" data-ar="تعلم القرآن الكريم عبر الإنترنت">Learn Quran Online</h1>
+            <p data-en="Begin your journey with the Quran in a serene learning environment designed to help you improve reading, master Tajweed rules, memorize verses, and build a lasting connection with the Book of Allah."
+               data-ar="ابدأ رحلتك مع القرآن في بيئة تعليمية هادئة مصممة لمساعدتك على تحسين القراءة، وإتقان أحكام التجويد، وحفظ الآيات، وبناء ارتباط دائم بكتاب الله.">
+              Begin your journey with the Quran in a serene learning environment designed to help you improve reading, master Tajweed rules, memorize verses, and build a lasting connection with the Book of Allah.
+            </p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;">
+              <a href="https://wa.me/201555063434" target="_blank" class="btn-primary"
+                 data-en="Start Your Quran Journey Today" data-ar="ابدأ رحلتك مع القرآن اليوم">Start Your Quran Journey Today</a>
+              <a href="#topics" class="btn-secondary" style="border:1px solid rgba(61,43,31,0.2);padding:14px 28px;border-radius:50px;text-decoration:none;color:var(--brown-dark);font-weight:600;"
+                 data-en="Explore Quran Modules" data-ar="استكشف وحدات القرآن">Explore Quran Modules</a>
+            </div>
+          </div>
+          <div class="program-hero-img-wrap fade-in-right">
+            <img src="img/quran-hero.png" alt="Learn Quran Online — Stacked Holy Quran books" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOPICS BENTO GRID ===== -->
+    <section class="topics-section" id="topics">
+      <div class="container">
+        <div style="text-align:center;max-width:800px;margin:0 auto;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="QURAN MODULES" data-ar="وحدات القرآن">QURAN MODULES</span>
+          <h2 style="font-family:var(--font-display);font-size:2.4rem;color:var(--brown-dark);margin-top:8px;margin-bottom:14px;"
+              data-en="What You Will Master" data-ar="ما ستتقنه">What You Will Master</h2>
+          <p style="font-family:var(--font-ui);font-size:1.05rem;color:rgba(61,43,31,0.8);line-height:1.7;"
+             data-en="Everyone begins their journey with the Quran from a different place. Whether you are learning to read for the first time, perfecting Tajweed, or working toward memorization (Hifz), consistent one-on-one guidance empowers you to progress with peace and confidence."
+             data-ar="يبدأ كل شخص رحلته مع القرآن من مكان مختلف. سواء كنت تتعلم القراءة لأول مرة، أو تتقن التجويد، أو تعمل على الحفظ، فإن التوجيه الفردي المستمر يمكّنك من التقدم بسلام وثقة.">
+            Everyone begins their journey with the Quran from a different place. Whether you are learning to read for the first time, perfecting Tajweed, or working toward memorization (Hifz), consistent one-on-one guidance empowers you to progress with peace and confidence.
+          </p>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Quran Reading &amp; Phonetics" data-ar="قراءة القرآن وعلم الأصوات">Quran Reading &amp; Phonetics</h3>
+              <p data-en="Learn to read Arabic Quranic text accurately with proper vowel sounds, articulation points (Makharij), and clear word recognition."
+                 data-ar="تعلم قراءة النص القرآني العربي بدقة مع أصوات الحروف الصحيحة ومخارج الحروف والتعرف الواضح على الكلمات.">
+                Learn to read Arabic Quranic text accurately with proper vowel sounds, articulation points (Makharij), and clear word recognition.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Tajweed Rules" data-ar="أحكام التجويد">Tajweed Rules</h3>
+              <p data-en="Master essential and advanced Tajweed rules—including Noon Sakinah, Meem Sakinah, Mudood (elongation), and stopping rules."
+                 data-ar="أتقن قواعد التجويد الأساسية والمتقدمة بما في ذلك النون الساكنة والميم الساكنة والمدود وأحكام الوقف.">
+                Master essential and advanced Tajweed rules—including Noon Sakinah, Meem Sakinah, Mudood (elongation), and stopping rules.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Recitation Improvement" data-ar="تحسين التلاوة">Recitation Improvement</h3>
+              <p data-en="Develop beautiful, fluent recitation under the direct, real-time guidance of certified Azhari Qaris and tutors."
+                 data-ar="طوّر تلاوة جميلة وطلقة تحت إشراف مباشر وفوري من قراء وأساتذة أزهريين معتمدين.">
+                Develop beautiful, fluent recitation under the direct, real-time guidance of certified Azhari Qaris and tutors.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Quran Memorization (Hifz)" data-ar="حفظ القرآن الكريم">Quran Memorization (Hifz)</h3>
+              <p data-en="Build a sustainable memorization habit step by step with personalized daily retention goals and structured revision plans."
+                 data-ar="ابنِ عادة حفظ مستدامة خطوة بخطوة مع أهداف يومية شخصية للاستيعاب وخطط مراجعة منظمة.">
+                Build a sustainable memorization habit step by step with personalized daily retention goals and structured revision plans.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Revision &amp; Retention" data-ar="المراجعة والاستيعاب">Revision &amp; Retention</h3>
+              <p data-en="Strengthen and preserve what you have memorized through systematic daily revision algorithms to prevent forgetfulness."
+                 data-ar="عزز وحافظ على ما حفظته من خلال خوارزميات مراجعة يومية منهجية لمنع النسيان.">
+                Strengthen and preserve what you have memorized through systematic daily revision algorithms to prevent forgetfulness.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Understanding &amp; Reflection" data-ar="الفهم والتأمل">Understanding &amp; Reflection</h3>
+              <p data-en="Go beyond recitation to understand verse meanings (Tafseer snippets) and reflect deeply on Quranic wisdom in daily life."
+                 data-ar="تجاوز التلاوة لفهم معاني الآيات ومقتطفات من التفسير والتأمل العميق في حكمة القرآن في الحياة اليومية.">
+                Go beyond recitation to understand verse meanings (Tafseer snippets) and reflect deeply on Quranic wisdom in daily life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRESSION TIMELINE ===== -->
+    <section class="progression-section">
+      <div class="container">
+        <div style="text-align:center;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="LEARNING METHODOLOGY" data-ar="منهجية التعلم">LEARNING METHODOLOGY</span>
+          <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--brown-dark);margin-top:8px;"
+              data-en="Step-by-Step Quran Path" data-ar="مسار القرآن خطوة بخطوة">Step-by-Step Quran Path</h2>
+        </div>
+        <div class="progression-track fade-in">
+          <div class="progression-step">
+            <div class="progression-num">1</div>
+            <h4 data-en="Start Level" data-ar="تقييم المستوى">Start Level</h4>
+            <p data-en="Evaluation of current reading or recitation fluency." data-ar="تقييم مستوى القراءة أو التلاوة الحالي.">Evaluation of current reading or recitation fluency.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">2</div>
+            <h4 data-en="Learn Rules" data-ar="تعلم الأحكام">Learn Rules</h4>
+            <p data-en="Master letter articulation and specific Tajweed laws." data-ar="إتقان مخارج الحروف وأحكام التجويد المحددة.">Master letter articulation and specific Tajweed laws.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">3</div>
+            <h4 data-en="Live Practice" data-ar="التطبيق المباشر">Live Practice</h4>
+            <p data-en="Recite directly to your tutor with immediate correction." data-ar="التلاوة مباشرة لمعلمك مع التصحيح الفوري.">Recite directly to your tutor with immediate correction.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">4</div>
+            <h4 data-en="Systematic Revision" data-ar="المراجعة المنهجية">Systematic Revision</h4>
+            <p data-en="Lock in memorized Surahs with review routines." data-ar="تثبيت السور المحفوظة بجداول مراجعة منتظمة.">Lock in memorized Surahs with review routines.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">5</div>
+            <h4 data-en="Fluent Mastery" data-ar="الإتقان الطلق">Fluent Mastery</h4>
+            <p data-en="Recite with beautified Tajweed and spiritual reflection." data-ar="التلاوة بتجويد جميل وتأمل روحي عميق.">Recite with beautified Tajweed and spiritual reflection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ACCORDION ===== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div style="text-align:center;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="FREQUENTLY ASKED QUESTIONS" data-ar="أسئلة شائعة">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--brown-dark);margin-top:8px;"
+              data-en="Quran Program FAQs" data-ar="أسئلة شائعة حول برنامج القرآن">Quran Program FAQs</h2>
+        </div>
+        <div class="faq-list fade-in">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Can beginners with zero Arabic background learn Quran?" data-ar="هل يستطيع المبتدئون بدون خلفية عربية تعلم القرآن؟">Can beginners with zero Arabic background learn Quran?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes. Beginners start with basic Quranic Arabic phonetics (Norani Qaida / Baghdadi method) and gradually progress to reading actual verses."
+                 data-ar="نعم. يبدأ المبتدئون بعلم أصوات القرآن العربي الأساسي (القاعدة النورانية / الطريقة البغدادية) ويتقدمون تدريجياً إلى قراءة الآيات الفعلية.">
+                Yes. Beginners start with basic Quranic Arabic phonetics (Norani Qaida / Baghdadi method) and gradually progress to reading actual verses.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Can I focus specifically on Tajweed rules?" data-ar="هل يمكنني التركيز تحديداً على أحكام التجويد؟">Can I focus specifically on Tajweed rules?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Absolutely. If you already read basic Quran, we tailor your classes to focus on practical and theoretical Tajweed rules to refine your recitation."
+                 data-ar="بالتأكيد. إذا كنت تقرأ القرآن بالفعل، نصمم دروسك للتركيز على أحكام التجويد العملية والنظرية لصقل تلاوتك.">
+                Absolutely. If you already read basic Quran, we tailor your classes to focus on practical and theoretical Tajweed rules to refine your recitation.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="How does Quran memorization (Hifz) work online?" data-ar="كيف يعمل حفظ القرآن عبر الإنترنت؟">How does Quran memorization (Hifz) work online?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="You meet 1-on-1 with your tutor to recite new memorization lines, recite recent lesson pages (Sabaqi), and review older parts (Manzil) to guarantee total retention."
+                 data-ar="تلتقي فردياً مع معلمك لتلاوة أسطر الحفظ الجديدة، وتلاوة صفحات الدرس الأخير (السبقي)، ومراجعة الأجزاء الأقدم (المنزل) لضمان الاستيعاب الكامل.">
+                You meet 1-on-1 with your tutor to recite new memorization lines, recite recent lesson pages (Sabaqi), and review older parts (Manzil) to guarantee total retention.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Are there female tutors available for sisters and children?" data-ar="هل تتوفر معلمات للأخوات والأطفال؟">Are there female tutors available for sisters and children?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes! We have qualified male and female certified Quran tutors available for all age groups and preferences."
+                 data-ar="نعم! لدينا معلمون ومعلمات معتمدون ومؤهلون للقرآن متاحون لجميع الفئات العمرية والتفضيلات.">
+                Yes! We have qualified male and female certified Quran tutors available for all age groups and preferences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM CTA ===== -->
+    <section class="program-cta">
+      <div class="container fade-in">
+        <h2 data-en="Start Your Journey with the Holy Quran" data-ar="ابدأ رحلتك مع القرآن الكريم">Start Your Journey with the Holy Quran</h2>
+        <p data-en="Do not wait until you feel completely ready. Start from where you are today and build a lifelong connection with the Book of Allah."
+           data-ar="لا تنتظر حتى تشعر أنك مستعد تماماً. ابدأ من حيث أنت اليوم وابنِ ارتباطاً مدى الحياة بكتاب الله.">
+          Do not wait until you feel completely ready. Start from where you are today and build a lifelong connection with the Book of Allah.
+        </p>
+        <a href="https://wa.me/201555063434" target="_blank" class="btn-primary" style="background:var(--gold);color:var(--brown-dark);"
+           data-en="Book Your Free Quran Trial Class" data-ar="احجز درسك التجريبي المجاني في القرآن">Book Your Free Quran Trial Class</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+        <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <a href="index.html" class="footer-logo-link" aria-label="Sabeely Home">
+              <img src="img/sabeely_logo_white.png" alt="Sabeeli Academy" class="footer-logo" style="height: 48px; width: auto; margin-bottom: 20px;" />
+            </a>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: rgba(250, 246, 240, 0.85); max-width: 480px;">
+              Sabeely is a peaceful Quran and Tajweed learning platform created
+              to guide every heart toward the Quran with clarity, reflection,
+              and faith.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; color: var(--gold);">Quick Links</h4>
+            <ul style="display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0;">
+              <li><a href="index.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Home</a></li>
+              <li><a href="learn-quran.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Learn Quran</a></li>
+              <li><a href="learn-arabic.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Learn Arabic</a></li>
+              <li><a href="learn-islamic-studies.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Islamic Studies</a></li>
+              <li><a href="blog.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(250, 246, 240, 0.12); padding-top: 24px; text-align: center;">
+          <p style="font-size: 0.9rem; color: rgba(250, 246, 240, 0.65);">&copy; 2026 Sabeely. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ===== LANGUAGE TOGGLE =====
+      let currentLang = 'en';
+      function toggleLang() {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        const html = document.getElementById('htmlRoot');
+        const btn = document.getElementById('langToggle');
+        if (currentLang === 'ar') {
+          html.setAttribute('lang', 'ar');
+          html.setAttribute('dir', 'rtl');
+          btn.textContent = 'EN';
+        } else {
+          html.setAttribute('lang', 'en');
+          html.setAttribute('dir', 'ltr');
+          btn.textContent = 'AR';
+        }
+        document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+          el.textContent = el.getAttribute('data-' + currentLang);
+        });
+      }
+
+      // ===== SCROLL ANIMATIONS =====
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+
+      // ===== MOBILE MENU =====
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('navLinks');
+      const navOverlay = document.getElementById('navOverlay');
+      if (hamburger) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+          navOverlay.classList.toggle('active');
+        });
+      }
+      if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+          hamburger && hamburger.classList.remove('active');
+          navLinks && navLinks.classList.remove('active');
+          navOverlay.classList.remove('active');
+        });
+      }
+
+      // ===== FAQ ACCORDION =====
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+      });
+    </script>
+  </body>
+</html>

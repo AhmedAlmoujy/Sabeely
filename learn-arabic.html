@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Arabic Online — Sabeely Academy</title>
+    <meta name="description" content="Start your journey to learning Arabic online with a clear and structured approach. Develop reading, writing, listening, and speaking skills step by step with Sabeely Academy." />
+    <link rel="icon" type="image/png" href="img/sabeely_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .lang-toggle-btn {
+        background: transparent;
+        border: 1.5px solid var(--gold);
+        color: var(--gold);
+        font-family: var(--font-ui);
+        font-size: 0.82rem;
+        font-weight: 700;
+        padding: 7px 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: background 0.25s, color 0.25s;
+        white-space: nowrap;
+      }
+      .lang-toggle-btn:hover { background: var(--gold); color: #fff; }
+      [dir="rtl"] body,
+      [dir="rtl"] .program-hero-content,
+      [dir="rtl"] .topic-card,
+      [dir="rtl"] .faq-item,
+      [dir="rtl"] .progression-step,
+      [dir="rtl"] p, [dir="rtl"] h1,
+      [dir="rtl"] h2, [dir="rtl"] h3 {
+        font-family: 'Cairo', 'Tajawal', sans-serif !important;
+      }
+      [dir="rtl"] .program-hero-grid,
+      [dir="rtl"] .navbar-links,
+      [dir="rtl"] .faq-question,
+      [dir="rtl"] .progression-track,
+      [dir="rtl"] .program-cta { direction: rtl; }
+      [dir="rtl"] .faq-question { text-align: right; }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-logo">
+          <img src="img/sabeely_logo.png" alt="Sabeely Logo" />
+        </a>
+        <ul class="navbar-links" id="navLinks">
+          <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="learn-quran.html" data-en="Learn Quran" data-ar="تعلم القرآن">Learn Quran</a></li>
+          <li><a href="learn-arabic.html" data-en="Learn Arabic" data-ar="تعلم العربية">Learn Arabic</a></li>
+          <li><a href="learn-islamic-studies.html" data-en="Islamic Studies" data-ar="الدراسات الإسلامية">Islamic Studies</a></li>
+          <li><a href="blog.html" data-en="Blog" data-ar="المدونة">Blog</a></li>
+          <li>
+            <a href="https://wa.me/201555063434" target="_blank" class="btn-nav"
+               data-en="Start Your Journey" data-ar="ابدأ رحلتك">Start Your Journey</a>
+          </li>
+        </ul>
+        <button class="lang-toggle-btn" id="langToggle" onclick="toggleLang()">AR</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== PROGRAM HERO ===== -->
+    <section class="program-hero">
+      <div class="container">
+        <div class="program-hero-grid">
+          <div class="program-hero-content fade-in-left">
+            <div class="program-hero-badge" data-en="ARABIC LANGUAGE PROGRAM" data-ar="برنامج اللغة العربية">
+              ARABIC LANGUAGE PROGRAM
+            </div>
+            <h1 data-en="Learn Arabic Online" data-ar="تعلم اللغة العربية عبر الإنترنت">Learn Arabic Online</h1>
+            <p data-en="Start your journey to learning Arabic with a clear and comfortable approach. Develop your reading, writing, listening, and speaking skills step by step with expert native tutors."
+               data-ar="ابدأ رحلتك في تعلم اللغة العربية بأسلوب واضح ومريح. طوّر مهارات القراءة والكتابة والاستماع والتحدث خطوة بخطوة مع معلمين أصحاب خبرة من الناطقين الأصليين.">
+              Start your journey to learning Arabic with a clear and comfortable approach. Develop your reading, writing, listening, and speaking skills step by step with expert native tutors.
+            </p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;">
+              <a href="https://wa.me/201555063434" target="_blank" class="btn-primary"
+                 data-en="Start Your Arabic Journey" data-ar="ابدأ رحلتك مع العربية">Start Your Arabic Journey</a>
+              <a href="#topics" class="btn-secondary" style="border:1px solid rgba(61,43,31,0.2);padding:14px 28px;border-radius:50px;text-decoration:none;color:var(--brown-dark);font-weight:600;"
+                 data-en="Explore Curriculum" data-ar="استكشف المنهج">Explore Curriculum</a>
+            </div>
+          </div>
+          <div class="program-hero-img-wrap fade-in-right">
+            <img src="img/arabic-hero.png" alt="Learn Arabic Online — Traditional Reed Pen and Parchment Calligraphy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOPICS BENTO GRID ===== -->
+    <section class="topics-section" id="topics">
+      <div class="container">
+        <div style="text-align:center;max-width:800px;margin:0 auto;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="CURRICULUM MODULES" data-ar="وحدات المنهج">CURRICULUM MODULES</span>
+          <h2 style="font-family:var(--font-display);font-size:2.4rem;color:var(--brown-dark);margin-top:8px;margin-bottom:14px;"
+              data-en="What You Will Master" data-ar="ما ستتقنه">What You Will Master</h2>
+          <p style="font-family:var(--font-ui);font-size:1.05rem;color:rgba(61,43,31,0.8);line-height:1.7;"
+             data-en="Arabic may seem challenging at first, especially for non-native speakers. But with a gradual and structured approach, learning Arabic becomes clear, enjoyable, and deeply empowering. From your first letters to natural conversation, we guide your path every step of the way."
+             data-ar="قد تبدو اللغة العربية صعبة في البداية، خاصة لغير الناطقين بها. لكن مع نهج تدريجي ومنظم، يصبح تعلم العربية واضحاً وممتعاً ومُعززاً للثقة. من أولى حروفك إلى المحادثة الطبيعية، نرافقك في كل خطوة.">
+            Arabic may seem challenging at first, especially for non-native speakers. But with a gradual and structured approach, learning Arabic becomes clear, enjoyable, and deeply empowering. From your first letters to natural conversation, we guide your path every step of the way.
+          </p>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Reading &amp; Writing" data-ar="القراءة والكتابة">Reading &amp; Writing</h3>
+              <p data-en="Master reading Arabic script fluently and writing words and full sentences correctly with accurate letter connections."
+                 data-ar="أتقن قراءة الخط العربي بطلاقة وكتابة الكلمات والجمل الكاملة بشكل صحيح مع ربط الحروف بدقة.">
+                Master reading Arabic script fluently and writing words and full sentences correctly with accurate letter connections.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Speaking &amp; Conversation" data-ar="التحدث والمحادثة">Speaking &amp; Conversation</h3>
+              <p data-en="Gain practical speaking skills to express your thoughts, engage in daily conversations, and speak Arabic with real confidence."
+                 data-ar="اكتسب مهارات تحدث عملية للتعبير عن أفكارك والمشاركة في المحادثات اليومية والتحدث بالعربية بثقة حقيقية.">
+                Gain practical speaking skills to express your thoughts, engage in daily conversations, and speak Arabic with real confidence.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Listening &amp; Comprehension" data-ar="الاستماع والفهم">Listening &amp; Comprehension</h3>
+              <p data-en="Train your ear to recognize spoken Arabic accents, speech patterns, and expressions in authentic conversational contexts."
+                 data-ar="درّب أذنك على التعرف على لهجات العربية المنطوقة وأنماط الكلام والتعبيرات في سياقات المحادثة الأصيلة.">
+                Train your ear to recognize spoken Arabic accents, speech patterns, and expressions in authentic conversational contexts.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Arabic Grammar (Nahw &amp; Sarf)" data-ar="النحو والصرف">Arabic Grammar (Nahw &amp; Sarf)</h3>
+              <p data-en="Understand the foundational rules of sentence structure, verb conjugations, and grammar logic step by step without overwhelm."
+                 data-ar="افهم القواعد الأساسية لتركيب الجملة وتصريف الأفعال ومنطق القواعد خطوة بخطوة دون تعقيد.">
+                Understand the foundational rules of sentence structure, verb conjugations, and grammar logic step by step without overwhelm.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Vocabulary &amp; Expressions" data-ar="المفردات والتعبيرات">Vocabulary &amp; Expressions</h3>
+              <p data-en="Expand your word bank organically through real-world context and contextual themes rather than dry memorization lists."
+                 data-ar="وسّع قاموسك اللغوي بشكل طبيعي من خلال السياق الواقعي والموضوعات السياقية بدلاً من قوائم الحفظ الجافة.">
+                Expand your word bank organically through real-world context and contextual themes rather than dry memorization lists.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Arabic for Quran Comprehension" data-ar="العربية لفهم القرآن">Arabic for Quran Comprehension</h3>
+              <p data-en="Connect your language skills directly to the Quranic text, enabling you to understand sacred words and meanings deeply."
+                 data-ar="اربط مهاراتك اللغوية مباشرة بالنص القرآني مما يُمكّنك من فهم الكلمات والمعاني المقدسة بعمق.">
+                Connect your language skills directly to the Quranic text, enabling you to understand sacred words and meanings deeply.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEVEL PROGRESSION TRACK ===== -->
+    <section class="progression-section">
+      <div class="container">
+        <div style="text-align:center;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="THE ROADMAP" data-ar="خارطة الطريق">THE ROADMAP</span>
+          <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--brown-dark);margin-top:8px;"
+              data-en="Your Step-by-Step Progress" data-ar="تقدمك خطوة بخطوة">Your Step-by-Step Progress</h2>
+        </div>
+        <div class="progression-track fade-in">
+          <div class="progression-step">
+            <div class="progression-num">1</div>
+            <h4 data-en="Discover Level" data-ar="اكتشف مستواك">Discover Level</h4>
+            <p data-en="Assessment to pinpoint your current starting point." data-ar="تقييم لتحديد نقطة البداية الحالية.">Assessment to pinpoint your current starting point.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">2</div>
+            <h4 data-en="Learn Basics" data-ar="تعلم الأساسيات">Learn Basics</h4>
+            <p data-en="Master letters, sounds, and foundational vocabulary." data-ar="إتقان الحروف والأصوات والمفردات الأساسية.">Master letters, sounds, and foundational vocabulary.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">3</div>
+            <h4 data-en="Practice &amp; Speak" data-ar="التدريب والتحدث">Practice &amp; Speak</h4>
+            <p data-en="Form sentences and participate in live guided dialogue." data-ar="كوّن جملاً وشارك في حوار مباشر موجّه.">Form sentences and participate in live guided dialogue.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">4</div>
+            <h4 data-en="Develop Skills" data-ar="طوّر المهارات">Develop Skills</h4>
+            <p data-en="Deepen grammar, reading comprehension, and listening." data-ar="عمّق قواعد النحو وفهم القراءة والاستماع.">Deepen grammar, reading comprehension, and listening.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">5</div>
+            <h4 data-en="Fluency &amp; Mastery" data-ar="الطلاقة والإتقان">Fluency &amp; Mastery</h4>
+            <p data-en="Read Quranic texts and converse with total confidence." data-ar="اقرأ النصوص القرآنية وتحدث بثقة تامة.">Read Quranic texts and converse with total confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ACCORDION ===== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div style="text-align:center;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="FREQUENTLY ASKED QUESTIONS" data-ar="أسئلة شائعة">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--brown-dark);margin-top:8px;"
+              data-en="Learning Arabic FAQs" data-ar="أسئلة شائعة حول تعلم العربية">Learning Arabic FAQs</h2>
+        </div>
+        <div class="faq-list fade-in">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Can I learn Arabic from absolute scratch?" data-ar="هل يمكنني تعلم العربية من الصفر؟">Can I learn Arabic from absolute scratch?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes, absolutely! You can begin your journey from zero prior knowledge. We start with letter shapes, phonetics, and basic pronunciation in a supportive step-by-step manner."
+                 data-ar="نعم بالتأكيد! يمكنك بدء رحلتك دون أي معرفة مسبقة. نبدأ بأشكال الحروف وعلم الأصوات والنطق الأساسي بطريقة تدريجية داعمة.">
+                Yes, absolutely! You can begin your journey from zero prior knowledge. We start with letter shapes, phonetics, and basic pronunciation in a supportive step-by-step manner.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Are these lessons suitable for non-native Arabic speakers?" data-ar="هل هذه الدروس مناسبة لغير الناطقين بالعربية؟">Are these lessons suitable for non-native Arabic speakers?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes. Our Arabic curriculum is specifically designed for non-native speakers, utilizing clear English explanations, visual aids, and gradual practice."
+                 data-ar="نعم. مناهجنا العربية مصممة خصيصاً لغير الناطقين بها، باستخدام شروح إنجليزية واضحة ووسائل بصرية وتدريب تدريجي.">
+                Yes. Our Arabic curriculum is specifically designed for non-native speakers, utilizing clear English explanations, visual aids, and gradual practice.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Will learning Arabic help me understand the Quran?" data-ar="هل سيساعدني تعلم العربية على فهم القرآن؟">Will learning Arabic help me understand the Quran?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes! Learning Arabic provides the grammatical and vocabulary keys to understand Quranic words, structures, and meanings directly without relying solely on translation."
+                 data-ar="نعم! يمنحك تعلم العربية مفاتيح القواعد والمفردات لفهم الكلمات والتراكيب والمعاني القرآنية مباشرة دون الاعتماد فقط على الترجمة.">
+                Yes! Learning Arabic provides the grammatical and vocabulary keys to understand Quranic words, structures, and meanings directly without relying solely on translation.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="What if I already know some basic Arabic?" data-ar="ماذا لو كنت أعرف بعض العربية الأساسية؟">What if I already know some basic Arabic?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="If you already have some background knowledge, we place you at an intermediate level so you can focus directly on conversation, advanced grammar, or Quranic comprehension."
+                 data-ar="إذا كانت لديك بعض المعرفة الأساسية، نضعك في مستوى متوسط لتتمكن من التركيز مباشرة على المحادثة أو القواعد المتقدمة أو فهم القرآن.">
+                If you already have some background knowledge, we place you at an intermediate level so you can focus directly on conversation, advanced grammar, or Quranic comprehension.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM CTA ===== -->
+    <section class="program-cta">
+      <div class="container fade-in">
+        <h2 data-en="Start Your Arabic Learning Journey" data-ar="ابدأ رحلتك في تعلم اللغة العربية">Start Your Arabic Learning Journey</h2>
+        <p data-en="Whether you are learning Arabic for the first time or advancing your current skills, every step brings you closer to understanding and confidence."
+           data-ar="سواء كنت تتعلم العربية لأول مرة أو تطور مهاراتك الحالية، كل خطوة تقربك من الفهم والثقة.">
+          Whether you are learning Arabic for the first time or advancing your current skills, every step brings you closer to understanding and confidence.
+        </p>
+        <a href="https://wa.me/201555063434" target="_blank" class="btn-primary" style="background:var(--gold);color:var(--brown-dark);"
+           data-en="Begin Your Free Evaluation Class" data-ar="ابدأ درسك التقييمي المجاني">Begin Your Free Evaluation Class</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+        <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <a href="index.html" class="footer-logo-link" aria-label="Sabeely Home">
+              <img src="img/sabeely_logo_white.png" alt="Sabeeli Academy" class="footer-logo" style="height: 48px; width: auto; margin-bottom: 20px;" />
+            </a>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: rgba(250, 246, 240, 0.85); max-width: 480px;">
+              Sabeely is a peaceful Quran and Tajweed learning platform created
+              to guide every heart toward the Quran with clarity, reflection,
+              and faith.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; color: var(--gold);">Quick Links</h4>
+            <ul style="display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0;">
+              <li><a href="index.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Home</a></li>
+              <li><a href="learn-quran.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Learn Quran</a></li>
+              <li><a href="learn-arabic.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Learn Arabic</a></li>
+              <li><a href="learn-islamic-studies.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Islamic Studies</a></li>
+              <li><a href="blog.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(250, 246, 240, 0.12); padding-top: 24px; text-align: center;">
+          <p style="font-size: 0.9rem; color: rgba(250, 246, 240, 0.65);">&copy; 2026 Sabeely. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let currentLang = 'en';
+      function toggleLang() {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        const html = document.getElementById('htmlRoot');
+        const btn = document.getElementById('langToggle');
+        if (currentLang === 'ar') {
+          html.setAttribute('lang', 'ar');
+          html.setAttribute('dir', 'rtl');
+          btn.textContent = 'EN';
+        } else {
+          html.setAttribute('lang', 'en');
+          html.setAttribute('dir', 'ltr');
+          btn.textContent = 'AR';
+        }
+        document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+          el.textContent = el.getAttribute('data-' + currentLang);
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('navLinks');
+      const navOverlay = document.getElementById('navOverlay');
+      if (hamburger) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+          navOverlay.classList.toggle('active');
+        });
+      }
+      if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+          hamburger && hamburger.classList.remove('active');
+          navLinks && navLinks.classList.remove('active');
+          navOverlay.classList.remove('active');
+        });
+      }
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+      });
+    </script>
+  </body>
+</html>

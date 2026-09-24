@@ -15,4 +15,10 @@ node_modules/
 Sabeely.pdf
 
 # Scratch/temp
+scratch/
 scratch_text.txt
+index_sabeely_backup.html
+*.zip
+sabeely-v*/
+sabeely-theme/
+

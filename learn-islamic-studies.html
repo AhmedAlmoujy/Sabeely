@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Islamic Studies Online — Sabeely Academy</title>
+    <meta name="description" content="Explore Aqeedah, Fiqh, Hadith, Seerah, and Islamic manners online. Build a structured, clear understanding of your faith with Sabeely Academy." />
+    <link rel="icon" type="image/png" href="img/sabeely_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .lang-toggle-btn {
+        background: transparent;
+        border: 1.5px solid var(--gold);
+        color: var(--gold);
+        font-family: var(--font-ui);
+        font-size: 0.82rem;
+        font-weight: 700;
+        padding: 7px 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: background 0.25s, color 0.25s;
+        white-space: nowrap;
+      }
+      .lang-toggle-btn:hover { background: var(--gold); color: #fff; }
+      [dir="rtl"] body,
+      [dir="rtl"] .program-hero-content,
+      [dir="rtl"] .topic-card,
+      [dir="rtl"] .faq-item,
+      [dir="rtl"] .progression-step,
+      [dir="rtl"] p, [dir="rtl"] h1,
+      [dir="rtl"] h2, [dir="rtl"] h3 {
+        font-family: 'Cairo', 'Tajawal', sans-serif !important;
+      }
+      [dir="rtl"] .program-hero-grid,
+      [dir="rtl"] .navbar-links,
+      [dir="rtl"] .faq-question,
+      [dir="rtl"] .progression-track,
+      [dir="rtl"] .program-cta { direction: rtl; }
+      [dir="rtl"] .faq-question { text-align: right; }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-logo">
+          <img src="img/sabeely_logo.png" alt="Sabeely Logo" />
+        </a>
+        <ul class="navbar-links" id="navLinks">
+          <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="learn-quran.html" data-en="Learn Quran" data-ar="تعلم القرآن">Learn Quran</a></li>
+          <li><a href="learn-arabic.html" data-en="Learn Arabic" data-ar="تعلم العربية">Learn Arabic</a></li>
+          <li><a href="learn-islamic-studies.html" data-en="Islamic Studies" data-ar="الدراسات الإسلامية">Islamic Studies</a></li>
+          <li><a href="blog.html" data-en="Blog" data-ar="المدونة">Blog</a></li>
+          <li>
+            <a href="https://wa.me/201555063434" target="_blank" class="btn-nav"
+               data-en="Start Your Journey" data-ar="ابدأ رحلتك">Start Your Journey</a>
+          </li>
+        </ul>
+        <button class="lang-toggle-btn" id="langToggle" onclick="toggleLang()">AR</button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== PROGRAM HERO ===== -->
+    <section class="program-hero">
+      <div class="container">
+        <div class="program-hero-grid">
+          <div class="program-hero-content fade-in-left">
+            <div class="program-hero-badge" data-en="ISLAMIC STUDIES PROGRAM" data-ar="برنامج الدراسات الإسلامية">
+              ISLAMIC STUDIES PROGRAM
+            </div>
+            <h1 data-en="Learn Islamic Studies Online" data-ar="تعلم الدراسات الإسلامية عبر الإنترنت">Learn Islamic Studies Online</h1>
+            <p data-en="Explore the foundations of Islamic studies through a clear and structured learning journey designed to help you build deeper knowledge of Islam, understand its core principles, and connect sacred knowledge with daily life."
+               data-ar="استكشف أسس الدراسات الإسلامية من خلال رحلة تعليمية واضحة ومنظمة مصممة لمساعدتك على بناء معرفة أعمق بالإسلام وفهم مبادئه الأساسية وربط العلم الشرعي بالحياة اليومية.">
+              Explore the foundations of Islamic studies through a clear and structured learning journey designed to help you build deeper knowledge of Islam, understand its core principles, and connect sacred knowledge with daily life.
+            </p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;">
+              <a href="https://wa.me/201555063434" target="_blank" class="btn-primary"
+                 data-en="Start Islamic Studies Today" data-ar="ابدأ الدراسات الإسلامية اليوم">Start Islamic Studies Today</a>
+              <a href="#topics" class="btn-secondary" style="border:1px solid rgba(61,43,31,0.2);padding:14px 28px;border-radius:50px;text-decoration:none;color:var(--brown-dark);font-weight:600;"
+                 data-en="View Subjects" data-ar="استعرض المواد">View Subjects</a>
+            </div>
+          </div>
+          <div class="program-hero-img-wrap fade-in-right">
+            <img src="img/islamic-studies-hero.png" alt="Learn Islamic Studies Online — Classic Leather Manuscripts and Brass Lantern" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOPICS BENTO GRID ===== -->
+    <section class="topics-section" id="topics">
+      <div class="container">
+        <div style="text-align:center;max-width:800px;margin:0 auto;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="SUBJECT AREAS" data-ar="مجالات الدراسة">SUBJECT AREAS</span>
+          <h2 style="font-family:var(--font-display);font-size:2.4rem;color:var(--brown-dark);margin-top:8px;margin-bottom:14px;"
+              data-en="What You Will Learn" data-ar="ما ستتعلمه">What You Will Learn</h2>
+          <p style="font-family:var(--font-ui);font-size:1.05rem;color:rgba(61,43,31,0.8);line-height:1.7;"
+             data-en="Seeking sacred knowledge is a continuous lifelong journey. It begins with clear learning, matures through understanding, and transforms into practice, noble character, and spiritual peace."
+             data-ar="طلب العلم الشرعي رحلة مستمرة مدى الحياة. تبدأ بالتعلم الواضح، وتنضج بالفهم، وتتحول إلى عمل وخلق نبيل وسكينة روحية.">
+            Seeking sacred knowledge is a continuous lifelong journey. It begins with clear learning, matures through understanding, and transforms into practice, noble character, and spiritual peace.
+          </p>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Aqeedah (Islamic Creed)" data-ar="العقيدة الإسلامية">Aqeedah (Islamic Creed)</h3>
+              <p data-en="Explore the core pillars of Islamic belief and develop a sound, confident understanding of faith rooted in authentic Quran and Sunnah."
+                 data-ar="استكشف أركان العقيدة الإسلامية الأساسية وطوّر فهماً سليماً وراسخاً للإيمان المستند إلى القرآن الكريم والسنة النبوية الصحيحة.">
+                Explore the core pillars of Islamic belief and develop a sound, confident understanding of faith rooted in authentic Quran and Sunnah.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Fiqh (Jurisprudence)" data-ar="الفقه الإسلامي">Fiqh (Jurisprudence)</h3>
+              <p data-en="Learn practical Islamic rulings regarding daily worship (Taharah, Salah, Sawm, Zakah) and essential everyday interactions."
+                 data-ar="تعلم الأحكام الإسلامية العملية المتعلقة بالعبادات اليومية (الطهارة والصلاة والصوم والزكاة) والتعاملات اليومية الأساسية.">
+                Learn practical Islamic rulings regarding daily worship (Taharah, Salah, Sawm, Zakah) and essential everyday interactions.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Hadith Studies" data-ar="دراسة الحديث النبوي">Hadith Studies</h3>
+              <p data-en="Study key sayings and traditions of Prophet Muhammad ﷺ, extracting timeless guidance, legal insights, and moral wisdom."
+                 data-ar="ادرس أبرز أقوال وأفعال النبي محمد ﷺ واستخلص الإرشادات الخالدة والرؤى الفقهية والحكمة الأخلاقية.">
+                Study key sayings and traditions of Prophet Muhammad ﷺ, extracting timeless guidance, legal insights, and moral wisdom.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Seerah (Prophetic Biography)" data-ar="السيرة النبوية">Seerah (Prophetic Biography)</h3>
+              <p data-en="Follow the inspiring life journey of Prophet Muhammad ﷺ, understanding key historical milestones and moral lessons for modern living."
+                 data-ar="تتبع رحلة حياة النبي محمد ﷺ الملهمة وافهم المحطات التاريخية الرئيسية والدروس الأخلاقية للحياة المعاصرة.">
+                Follow the inspiring life journey of Prophet Muhammad ﷺ, understanding key historical milestones and moral lessons for modern living.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Islamic Character &amp; Adab" data-ar="الأخلاق والآداب الإسلامية">Islamic Character &amp; Adab</h3>
+              <p data-en="Learn Islamic etiquette, personal manners, and social ethics designed to elevate your character and treatment of others."
+                 data-ar="تعلم آداب الإسلام والأخلاق الشخصية والأخلاقيات الاجتماعية المصممة لرفع مستوى شخصيتك ومعاملتك للآخرين.">
+                Learn Islamic etiquette, personal manners, and social ethics designed to elevate your character and treatment of others.
+              </p>
+            </div>
+          </div>
+          <div class="topic-card fade-in">
+            <div>
+              <h3 data-en="Foundations of Islam" data-ar="أسس الإسلام">Foundations of Islam</h3>
+              <p data-en="A balanced starting overview for new Muslims or beginners seeking a solid, holistic understanding of the Islamic worldview."
+                 data-ar="نظرة عامة متوازنة للمسلمين الجدد أو المبتدئين الذين يسعون إلى فهم شامل وراسخ للتصور الإسلامي للعالم.">
+                A balanced starting overview for new Muslims or beginners seeking a solid, holistic understanding of the Islamic worldview.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRESSION TIMELINE ===== -->
+    <section class="progression-section">
+      <div class="container">
+        <div style="text-align:center;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="KNOWLEDGE METHODOLOGY" data-ar="منهجية طلب العلم">KNOWLEDGE METHODOLOGY</span>
+          <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--brown-dark);margin-top:8px;"
+              data-en="From Knowledge to Character" data-ar="من العلم إلى الأخلاق">From Knowledge to Character</h2>
+        </div>
+        <div class="progression-track fade-in">
+          <div class="progression-step">
+            <div class="progression-num">1</div>
+            <h4 data-en="Learn" data-ar="التعلم">Learn</h4>
+            <p data-en="Acquire authentic knowledge through structured modules." data-ar="اكتسب المعرفة الأصيلة من خلال وحدات منظمة.">Acquire authentic knowledge through structured modules.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">2</div>
+            <h4 data-en="Understand" data-ar="الفهم">Understand</h4>
+            <p data-en="Grasp the context, wisdom, and core principles." data-ar="استوعب السياق والحكمة والمبادئ الأساسية.">Grasp the context, wisdom, and core principles.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">3</div>
+            <h4 data-en="Ask &amp; Clarify" data-ar="السؤال والتوضيح">Ask &amp; Clarify</h4>
+            <p data-en="Engage in open, thoughtful discussion with scholars." data-ar="شارك في نقاش مفتوح ومدروس مع العلماء.">Engage in open, thoughtful discussion with scholars.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">4</div>
+            <h4 data-en="Apply" data-ar="التطبيق">Apply</h4>
+            <p data-en="Integrate teachings into your worship and daily character." data-ar="دمج التعاليم في عبادتك وأخلاقك اليومية.">Integrate teachings into your worship and daily character.</p>
+          </div>
+          <div class="progression-step">
+            <div class="progression-num">5</div>
+            <h4 data-en="Continuous Growth" data-ar="النمو المستمر">Continuous Growth</h4>
+            <p data-en="Expand into specialized classical Islamic sciences." data-ar="التوسع في العلوم الإسلامية الكلاسيكية المتخصصة.">Expand into specialized classical Islamic sciences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ACCORDION ===== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div style="text-align:center;" class="fade-in">
+          <span style="font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);"
+                data-en="FREQUENTLY ASKED QUESTIONS" data-ar="أسئلة شائعة">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--brown-dark);margin-top:8px;"
+              data-en="Islamic Studies FAQs" data-ar="أسئلة شائعة حول الدراسات الإسلامية">Islamic Studies FAQs</h2>
+        </div>
+        <div class="faq-list fade-in">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Are these Islamic Studies classes suitable for beginners?" data-ar="هل هذه الدروس مناسبة للمبتدئين؟">Are these Islamic Studies classes suitable for beginners?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes. Beginners start with the foundational principles of Islam and gradually progress toward deeper subjects like Fiqh, Seerah, and Hadith."
+                 data-ar="نعم. يبدأ المبتدئون بمبادئ الإسلام الأساسية ويتقدمون تدريجياً نحو موضوعات أعمق كالفقه والسيرة والحديث.">
+                Yes. Beginners start with the foundational principles of Islam and gradually progress toward deeper subjects like Fiqh, Seerah, and Hadith.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Can I study Islamic Studies alongside Quran or Arabic?" data-ar="هل يمكنني دراسة الدراسات الإسلامية بجانب القرآن أو العربية؟">Can I study Islamic Studies alongside Quran or Arabic?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes! Many students combine Islamic Studies with Quran recitation or Arabic language learning to build a well-rounded Islamic education."
+                 data-ar="نعم! يجمع كثير من الطلاب بين الدراسات الإسلامية وتلاوة القرآن أو تعلم اللغة العربية لبناء تعليم إسلامي متكامل.">
+                Yes! Many students combine Islamic Studies with Quran recitation or Arabic language learning to build a well-rounded Islamic education.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-en="Are there specialized tracks for children or reverts?" data-ar="هل توجد مسارات متخصصة للأطفال والمسلمين الجدد؟">Are there specialized tracks for children or reverts?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-answer">
+              <p data-en="Yes. We have customized age-appropriate learning tracks for youth as well as supportive foundational modules for new Muslims (reverts)."
+                 data-ar="نعم. لدينا مسارات تعليمية مخصصة ومناسبة للعمر للشباب وكذلك وحدات أساسية داعمة للمسلمين الجدد.">
+                Yes. We have customized age-appropriate learning tracks for youth as well as supportive foundational modules for new Muslims (reverts).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM CTA ===== -->
+    <section class="program-cta">
+      <div class="container fade-in">
+        <h2 data-en="Start Your Journey of Seeking Knowledge" data-ar="ابدأ رحلتك في طلب العلم">Start Your Journey of Seeking Knowledge</h2>
+        <p data-en="Seeking sacred knowledge transforms your heart, actions, and everyday life. Begin your path today with Sabeely Academy."
+           data-ar="طلب العلم الشرعي يحوّل قلبك وأفعالك وحياتك اليومية. ابدأ طريقك اليوم مع أكاديمية سبيلي.">
+          Seeking sacred knowledge transforms your heart, actions, and everyday life. Begin your path today with Sabeely Academy.
+        </p>
+        <a href="https://wa.me/201555063434" target="_blank" class="btn-primary" style="background:var(--gold);color:var(--brown-dark);"
+           data-en="Book Your Free Trial Class" data-ar="احجز درسك التجريبي المجاني">Book Your Free Trial Class</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+        <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <a href="index.html" class="footer-logo-link" aria-label="Sabeely Home">
+              <img src="img/sabeely_logo_white.png" alt="Sabeeli Academy" class="footer-logo" style="height: 48px; width: auto; margin-bottom: 20px;" />
+            </a>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: rgba(250, 246, 240, 0.85); max-width: 480px;">
+              Sabeely is a peaceful Quran and Tajweed learning platform created
+              to guide every heart toward the Quran with clarity, reflection,
+              and faith.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; color: var(--gold);">Quick Links</h4>
+            <ul style="display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0;">
+              <li><a href="index.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Home</a></li>
+              <li><a href="learn-quran.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Learn Quran</a></li>
+              <li><a href="learn-arabic.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Learn Arabic</a></li>
+              <li><a href="learn-islamic-studies.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Islamic Studies</a></li>
+              <li><a href="blog.html" style="color: rgba(250, 246, 240, 0.85); font-size: 0.95rem;">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom" style="border-top: 1px solid rgba(250, 246, 240, 0.12); padding-top: 24px; text-align: center;">
+          <p style="font-size: 0.9rem; color: rgba(250, 246, 240, 0.65);">&copy; 2026 Sabeely. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let currentLang = 'en';
+      function toggleLang() {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        const html = document.getElementById('htmlRoot');
+        const btn = document.getElementById('langToggle');
+        if (currentLang === 'ar') {
+          html.setAttribute('lang', 'ar');
+          html.setAttribute('dir', 'rtl');
+          btn.textContent = 'EN';
+        } else {
+          html.setAttribute('lang', 'en');
+          html.setAttribute('dir', 'ltr');
+          btn.textContent = 'AR';
+        }
+        document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+          el.textContent = el.getAttribute('data-' + currentLang);
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('navLinks');
+      const navOverlay = document.getElementById('navOverlay');
+      if (hamburger) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+          navOverlay.classList.toggle('active');
+        });
+      }
+      if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+          hamburger && hamburger.classList.remove('active');
+          navLinks && navLinks.classList.remove('active');
+          navOverlay.classList.remove('active');
+        });
+      }
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+      });
+    </script>
+  </body>
+</html>
