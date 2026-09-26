@@ -337,12 +337,15 @@ img {
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding: 125px 0 80px;
-  min-height: 580px;
+  padding: 100px 0 60px;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: radial-gradient(circle at 75% 45%, rgba(180, 144, 100, 0.24) 0%, rgba(23, 7, 0, 0) 70%), var(--brown-darker);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .hero-grid {
@@ -1450,6 +1453,7 @@ img {
 }
 
 .footer-about-text {
+  font-family: var(--font-heading), 'Playfair Display', Georgia, serif;
   font-size: 15px;
   line-height: 1.85;
   color: rgba(250, 246, 240, 0.85);
@@ -1704,7 +1708,41 @@ img {
     text-align: center;
     display: block;
   }
-  .why-us-title,
+  .why-us-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .why-us-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-us-title {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  .why-us-intro {
+    text-align: center;
+    margin: 0 auto 20px;
+    max-width: 580px;
+  }
+  .why-us-emblem-wrap {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto 30px;
+    text-align: center;
+  }
+  .why-us-emblem-img {
+    margin: 0 auto !important;
+    display: block;
+    max-width: 290px;
+    width: 100%;
+    height: auto;
+  }
   .teachers-title,
   .testimonials-title,
   .tuition-title,
@@ -1745,13 +1783,75 @@ img {
   .blog-grid {
     grid-template-columns: 1fr;
   }
+  .site-footer {
+    padding: 40px 0 24px;
+    background-color: #3D2B1F;
+    border-top: 1px solid rgba(180, 144, 100, 0.18);
+  }
   .footer-content {
+    display: flex;
     flex-direction: column;
-    gap: 36px;
-    margin-bottom: 35px;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 24px;
+    margin-bottom: 24px;
+    text-align: left;
   }
   .footer-about {
+    flex: none !important;
     max-width: 100%;
+    text-align: left;
+  }
+  .footer-logo-link {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .footer-logo {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+  }
+  .footer-about-text {
+    font-family: var(--font-heading), 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.85;
+    color: rgba(250, 246, 240, 0.85);
+    margin: 0;
+    text-align: left;
+  }
+  .footer-links-col {
+    text-align: left;
+    min-width: auto;
+  }
+  .footer-quick-title {
+    font-family: var(--font-heading), 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .footer-quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .footer-quick-links li a {
+    font-size: 15px;
+    color: rgba(250, 246, 240, 0.85);
+    text-align: left;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(250, 246, 240, 0.12);
+    padding-top: 22px;
+    text-align: center;
+  }
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(250, 246, 240, 0.55);
+    text-align: center;
   }
   .money-back-content {
     grid-template-columns: 1fr;
