@@ -337,23 +337,27 @@ img {
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding: 130px 0 60px;
-  background: radial-gradient(circle at 75% 40%, rgba(180, 144, 100, 0.22) 0%, rgba(23, 7, 0, 0) 70%), var(--brown-darker);
+  padding: 125px 0 80px;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 75% 45%, rgba(180, 144, 100, 0.24) 0%, rgba(23, 7, 0, 0) 70%), var(--brown-darker);
   overflow: hidden;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 40px;
+  gap: 48px;
+  width: 100%;
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 3.6rem;
   font-weight: 800;
-  line-height: 1.12;
-  margin-bottom: 28px;
+  line-height: 1.14;
+  margin-bottom: 26px;
   letter-spacing: -0.5px;
   font-family: var(--font-heading), var(--font-family);
 }
@@ -416,9 +420,9 @@ img {
 .hero-image-desktop {
   position: relative;
   z-index: 1;
-  max-height: 640px;
+  max-height: 560px;
   width: 100%;
-  max-width: 640px;
+  max-width: 560px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.55));
@@ -542,23 +546,28 @@ img {
   overflow: hidden;
 }
 
-.teachers-watermark {
+.teachers-watermark-bg {
   position: absolute;
-  top: 5%;
-  right: -5%;
-  width: 450px;
-  height: 450px;
-  background-image: url('img/pic.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.05;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(80px, 14vw, 220px);
+  font-weight: 900;
+  color: rgba(61, 43, 31, 0.035);
+  text-transform: uppercase;
+  letter-spacing: 12px;
   pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 1;
 }
 
 .teachers-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 70px;
+  position: relative;
+  z-index: 2;
 }
 
 .teachers-pretitle {
@@ -589,125 +598,102 @@ img {
   border-radius: 9999px;
 }
 
-.teachers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.teacher-card {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(61, 43, 31, 0.08);
-  border: 1px solid rgba(180, 144, 100, 0.15);
+.teachers-showcase-list {
   display: flex;
   flex-direction: column;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.teachers-showcase-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.teachers-showcase-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teachers-showcase-img img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(23, 7, 0, 0.12));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.teachers-showcase-img:hover img {
+  transform: scale(1.05) translateY(-6px);
+  filter: drop-shadow(0 22px 45px rgba(23, 7, 0, 0.18));
+}
+
+.teachers-showcase-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.teachers-feature-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #2AA889;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  font-family: var(--font-family);
+}
+
+.teachers-feature-desc {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 22px;
+}
+
+.teachers-feature-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1E6091;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: var(--transition);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.teachers-feature-link:hover {
+  color: var(--gold-dark);
+  text-decoration-color: var(--gold-dark);
+  transform: translateX(4px);
+}
+
+/* Scroll Animations: fadeInLeft & fadeInRight matching quranguides.org */
+.showcase-left {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transform: translateX(-70px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.teacher-card.animate-in {
+.showcase-right {
+  opacity: 0;
+  transform: translateX(70px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.teachers-showcase-row.animate-in .showcase-left,
+.teachers-showcase-row.animate-in .showcase-right {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.teacher-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(61, 43, 31, 0.15);
-  border-color: var(--gold);
-}
-
-.teacher-img-wrap {
-  width: 100%;
-  height: 240px;
-  overflow: hidden;
-  background-color: var(--cream-dark);
-}
-
-.teacher-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  transition: transform 0.4s ease;
-}
-
-.teacher-card:hover .teacher-img-wrap img {
-  transform: scale(1.05);
-}
-
-.teacher-card-body {
-  padding: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.teacher-card-body h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--brown-dark);
-  margin-bottom: 6px;
-}
-
-.teacher-stars {
-  color: var(--gold);
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  letter-spacing: 2px;
-}
-
-.teacher-students {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-.teacher-features {
-  list-style: none;
-  text-align: left;
-  margin-bottom: 24px;
-  padding: 0 8px;
-}
-
-.teacher-features li {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 20px;
-}
-
-.teacher-features li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: var(--olive);
-  font-weight: bold;
-}
-
-.cta-link {
-  margin-top: auto;
-  display: block;
-  background: var(--btn-gradient);
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 9999px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(180, 144, 100, 0.3);
-}
-
-.cta-link:hover {
-  background: var(--btn-gradient-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(180, 144, 100, 0.45);
+  transform: translateX(0);
 }
 
 .no-cc-badge {
@@ -1576,8 +1562,14 @@ img {
   .why-us-left {
     text-align: center;
   }
-  .teachers-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .teachers-showcase-row {
+    gap: 40px;
+  }
+  .teachers-showcase-img img {
+    max-width: 320px;
+  }
+  .teachers-feature-title {
+    font-size: 1.85rem;
   }
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1595,6 +1587,41 @@ img {
   }
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .teachers-showcase-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .teachers-showcase-list {
+    gap: 60px;
+  }
+  .teachers-showcase-row.reverse-on-mobile .teachers-showcase-img {
+    order: 1;
+  }
+  .teachers-showcase-row.reverse-on-mobile .teachers-showcase-content {
+    order: 2;
+  }
+  .teachers-showcase-img img {
+    max-width: 300px;
+  }
+  .teachers-feature-title {
+    font-size: 1.75rem;
+  }
+  .teachers-feature-link {
+    align-self: center;
+  }
+  /* On mobile / tablet use vertical slide to prevent horizontal overflow */
+  .showcase-left,
+  .showcase-right {
+    transform: translateY(35px);
+  }
+  .teachers-showcase-row.animate-in .showcase-left,
+  .teachers-showcase-row.animate-in .showcase-right {
+    transform: translateY(0);
   }
 }
 
@@ -1647,8 +1674,15 @@ img {
   .why-us-features {
     grid-template-columns: 1fr;
   }
-  .teachers-grid {
-    grid-template-columns: 1fr;
+  .teachers-showcase-img img {
+    max-width: 270px;
+  }
+  .teachers-feature-title {
+    font-size: 1.6rem;
+  }
+  .teachers-watermark-bg {
+    font-size: 70px;
+    letter-spacing: 6px;
   }
   .testimonials-grid {
     grid-template-columns: 1fr;
@@ -1688,6 +1722,26 @@ img {
 }
 
 @media (max-width: 480px) {
+  .teachers-platform-section {
+    padding: 60px 0;
+  }
+  .teachers-showcase-list {
+    gap: 48px;
+  }
+  .teachers-showcase-img img {
+    max-width: 230px;
+  }
+  .teachers-feature-title {
+    font-size: 1.4rem;
+  }
+  .teachers-feature-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  .teachers-title {
+    font-size: 2rem;
+  }
   .hero-title {
     font-size: 2rem;
   }
@@ -1695,5 +1749,8 @@ img {
     font-size: 1rem;
     padding: 12px 26px;
     width: 100%;
+  }
+  .container {
+    padding: 0 16px;
   }
 }
